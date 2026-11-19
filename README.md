@@ -24,3 +24,7 @@ pytest -q
 ## Contributing
 
 Read CONTRIBUTING.md before opening a pull request.
+
+## Architecture
+
+See docs/ARCHITECTURE.md for how the modules fit together.

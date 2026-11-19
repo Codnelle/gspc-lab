@@ -17,13 +17,16 @@ def _option(argv, name, default):
 def main(argv=None):
     argv = sys.argv[1:] if argv is None else argv
     if not argv or argv[0] in ("-h", "--help"):
-        print("usage: reportkit export --format csv")
+        print("usage: reportkit export [--format csv] [--rows N]")
         return 0
     command = argv[0]
     if command == "export":
         fmt = _option(argv, "--format", "csv")
         exporter = FORMATS[fmt]
-        report = Report("Sample").add("2026-01-01", 5)
+        count = int(_option(argv, "--rows", "1"))
+        report = Report("Sample")
+        for i in range(count):
+            report.add(f"2026-01-{i + 1:02d}", 5 * (i + 1))
         sys.stdout.write(exporter(report))
         return 0
     print(f"unknown command: {command}", file=sys.stderr)

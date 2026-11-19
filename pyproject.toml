@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "reportkit"
-version = "1.0.0"
+version = "1.1.0"
 description = "A tiny practice project for the GSoC prep lab: money reports and CSV export."
 requires-python = ">=3.10"
 readme = "README.md"
